@@ -15,7 +15,7 @@ data "aws_ami" "latest-ubuntu-image" {
 resource "aws_instance" "myapp-server" {
     ami                          = data.aws_ami.latest-ubuntu-image.id
     instance_type                = var.instance_type
-    key_name                     = "jenkins-server"
+    key_name                     = "terraform"
     subnet_id                    = aws_subnet.myapp-subnet-1.id
     vpc_security_group_ids       = [aws_default_security_group.default-sg.id]
     availability_zone            = var.availability_zone
